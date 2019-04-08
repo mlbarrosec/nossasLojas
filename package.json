@@ -1,0 +1,19 @@
+{
+  "name": "nossaslojas",
+  "version": "1.0.0",
+  "description": "API REST nossas Lojas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlbarrosec/nossasLojas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mlbarrosec/nossasLojas/issues"
+  },
+  "homepage": "https://github.com/mlbarrosec/nossasLojas#readme"
+}
