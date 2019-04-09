@@ -17,6 +17,7 @@ seu servidor estará rodando caso apareça no console o aviso "servidor rodando 
 o mesmo se encontra para download em: https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
 
 ### POST Cadastra elemento loja no banco de dados
+
 Para utilizar o metodo POST você deve executar a seguinte requisição no postman
 tipo: POST
 endereço: http://localhost:3000/stores/store/
@@ -46,7 +47,6 @@ store.cnpj = "00.000.000/0000-01";<br>
 store.workingHour = "Diariamente das 11hs às 23hs";<br>
 store.city = "Rio Grande";<br>
 store.state = "RS";<br>
-
 
 
 ## Configuração do Banco de dados
