@@ -56,13 +56,13 @@ module.exports = function(app) {
 
         //values to update
         store.id = id;
-        store.name = "Loja A";
-        store.address = "Rua Nova, 1241";
-        store.phone = "(XX) XXXXX-XX";
-        store.cnpj = "00.000.000/0000-01";
-        store.workingHour = "Diariamente das 11hs às 23hs";
-        store.city = "Rio Grande";
-        store.state = "RS";
+        store.name = "";
+        store.address = "";
+        store.phone = "";
+        store.cnpj = "";
+        store.workingHour = "";
+        store.city = "";
+        store.state = "";
 
         var connection = app.persistencia.ConnectionConfig();
         var storeDAO = new app.persistencia.StoreDAO(connection);
