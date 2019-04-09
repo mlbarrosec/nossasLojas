@@ -1,6 +1,10 @@
 # API Nossas Lojas
 Repositório da API REST para e-comerce "Minhas Lojas", utilizando Node e Banco de dados MYSQL
 
+<h2>Descrição:</h2>
+Essa aplicação tem como objetivo principal implementar um <b>API REST</b>, utilizando <b>node.js</b> e banco de dados <b>MYSQL</b>, responsavel por manilular informações de lojas físicas de um ecomerce.
+Essa API deve ser capaz de <b>cadastrar, editarm deletar, recuperar, listar e filtrar</b> as lojas cadastradas em um banco.
+
 <h2>Configuração do Banco de dados</h2>
 
 Para este projeto fou utilizado um banco de dados MYSQL de nome <b>"ourStores"</b>.
