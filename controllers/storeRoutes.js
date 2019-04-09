@@ -7,4 +7,11 @@ module.exports = function(app) {
         res.send('OK');
     });
 
+    //route for add data in db
+    app.post("/stores/store",function(req,res){
+        var store = req.body;
+        console.log(store);
+        res.send('Ok');
+    });
+
 }
