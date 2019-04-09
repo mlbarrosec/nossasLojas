@@ -7,8 +7,47 @@ informações de lojas físicas de um ecomerce.
 Essa API deve ser capaz de cadastrar, editarm deletar, recuperar, listar e filtrar as lojas cadastradas em um banco.
 
 ## Funcionamento
-Para execuar a aplicação é necessário ter o node instalado em seu computador.
+- Para execuar a aplicação é necessário ter o node instalado em seu computador.
 você pode obter ele no endereço: https://nodejs.org/en/
+
+- Após instalação execute o comando node index.js na pasta raiz do projeto
+seu servidor estará rodando caso apareça no console o aviso "servidor rodando na porta 3000";
+
+- Para testar as requisições é remondavel que use o puglin do postmam para o chrome
+o mesmo se encontra para download em: https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
+
+### POST Cadastra elemento loja no banco de dados
+Para utilizar o metodo POST você deve executar a seguinte requisição no postman
+tipo: POST
+endereço: http://localhost:3000/stores/store/
+E no corpo da requição o json com os dados da loja que deseja cadastrar no banco de dados
+exemplo:
+{
+		"name":"Loja A",
+		"address":"Rua Abc, 000",
+		"phone":"(00) 0000-0000",
+		"cnpj":"00.000.000/0000-00",
+		"workingHour":"Diariamente das 11hs às 23hs", 
+		"city":"Cidade ABC",
+		"state":"A"
+}
+
+### PUT Edita loja por ID
+tipo: PUT
+endereço: http://localhost:3000/stores/store/id (troque o id pelo id da linha a ser editada);
+No arquivo storeRoute.js o trecho a seguir define os dados que são atualizados
+
+//values to update
+store.id = id;
+store.name = "Loja A";
+store.address = "Rua Nova, 1241";
+store.phone = "(XX) XXXXX-XX";
+store.cnpj = "00.000.000/0000-01";
+store.workingHour = "Diariamente das 11hs às 23hs";
+store.city = "Rio Grande";
+store.state = "RS";
+
+
 
 ## Configuração do Banco de dados
 
