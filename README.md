@@ -6,6 +6,10 @@ Essa aplicação tem como objetivo principal implementar um API REST, utilizando
 informações de lojas físicas de um ecomerce.
 Essa API deve ser capaz de cadastrar, editarm deletar, recuperar, listar e filtrar as lojas cadastradas em um banco.
 
+## Funcionamento
+Para execuar a aplicação é necessário ter o node instalado em seu computador.
+você pode obter ele no endereço: https://nodejs.org/en/
+
 ## Configuração do Banco de dados
 
 Para este projeto fou utilizado um banco de dados MYSQL de nome "ourStores".
