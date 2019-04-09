@@ -5,6 +5,9 @@ var consign = require('consign'); //import consign api
 module.exports = function() { //esse modulo exporta a variavel app com express e suas funcionalidades
     
     var app = express();
-    consign().into(app); 
+    consign()
+        .include('controllers') //include de folder controllers
+        .into(app);
+
     return app;
 }
