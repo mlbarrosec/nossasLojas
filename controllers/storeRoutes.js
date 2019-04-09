@@ -48,9 +48,33 @@ module.exports = function(app) {
 
     });
 
+
+    // Method  pu for update table stores
     app.put("/stores/store/:id", function(req,res){
+        var store = {};
+        var id = req.params.id;
 
+        //values to update
+        store.id = id;
+        store.name = "Loja A";
+        store.address = "Rua Nova, 1241";
+        store.phone = "(XX) XXXXX-XX";
+        store.cnpj = "00.000.000/0000-01";
+        store.workingHour = "Diariamente das 11hs às 23hs";
+        store.city = "Rio Grande";
+        store.state = "RS";
 
+        var connection = app.persistencia.ConnectionConfig();
+        var storeDAO = new app.persistencia.StoreDAO(connection);
+
+        storeDAO.update(store, function(erro){
+            if(erro){
+                res.status(500).send(erro);
+                return;
+            }
+            console.log('loja atualizada');
+            res.send(store);
+        });
 
     });
 
