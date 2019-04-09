@@ -22,15 +22,15 @@ tipo: POST
 endereço: http://localhost:3000/stores/store/
 E no corpo da requição o json com os dados da loja que deseja cadastrar no banco de dados
 exemplo:
-{
-		"name":"Loja A",
-		"address":"Rua Abc, 000",
-		"phone":"(00) 0000-0000",
-		"cnpj":"00.000.000/0000-00",
-		"workingHour":"Diariamente das 11hs às 23hs", 
-		"city":"Cidade ABC",
-		"state":"A"
-}
+{<br>
+		"name":"Loja A",<br>
+		"address":"Rua Abc, 000",<br>
+		"phone":"(00) 0000-0000",<br>
+		"cnpj":"00.000.000/0000-00",<br>
+		"workingHour":"Diariamente das 11hs às 23hs", <br>
+		"city":"Cidade ABC",<br>
+		"state":"A"<br>
+}<br>
 
 ### PUT Edita loja por ID
 tipo: PUT
@@ -38,14 +38,14 @@ endereço: http://localhost:3000/stores/store/id (troque o id pelo id da linha a
 No arquivo storeRoute.js o trecho a seguir define os dados que são atualizados
 
 //values to update
-store.id = id;
-store.name = "Loja A";
-store.address = "Rua Nova, 1241";
-store.phone = "(XX) XXXXX-XX";
-store.cnpj = "00.000.000/0000-01";
-store.workingHour = "Diariamente das 11hs às 23hs";
-store.city = "Rio Grande";
-store.state = "RS";
+store.id = id;<br>
+store.name = "Loja A";<br>
+store.address = "Rua Nova, 1241";<br>
+store.phone = "(XX) XXXXX-XX";<br>
+store.cnpj = "00.000.000/0000-01";<br>
+store.workingHour = "Diariamente das 11hs às 23hs";<br>
+store.city = "Rio Grande";<br>
+store.state = "RS";<br>
 
 
 
