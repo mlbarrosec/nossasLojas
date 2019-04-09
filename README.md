@@ -37,7 +37,7 @@ tipo: PUT
 endereço: http://localhost:3000/stores/store/id (troque o id pelo id da linha a ser editada);
 No arquivo storeRoute.js o trecho a seguir define os dados que são atualizados
 
-//values to update
+//values to update<br>
 store.id = id;<br>
 store.name = "Loja A";<br>
 store.address = "Rua Nova, 1241";<br>
