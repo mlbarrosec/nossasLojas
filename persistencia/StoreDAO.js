@@ -10,7 +10,7 @@ StoreDAO.prototype.save = function(store,callback){
 }
 
 StoreDAO.prototype.update = function(store,callback) {
-    this._connection.query("UPDATE stores SET name = ?, address = ?, phone = ?, cnpj = ?, workingHour = ?, city = ?, state = ? WHERE id = ?",[store.name, store.address, store.phone, store.cnpj, store.workingHour, store.city, store.state, store.id], callback);
+    this._connection.query("UPDATE stores SET ? WHERE id = ?",[store, store.id], callback);
 }
 
 StoreDAO.prototype.searchForID= function(id,callback){

@@ -51,18 +51,21 @@ module.exports = function(app) {
 
     // Method  pu for update table stores
     app.put("/stores/store/:id", function(req,res){
-        var store = {};
+        var store = req.body;
+        //{};
+       
         var id = req.params.id;
+        store.id = id;
 
         //values to update
-        store.id = id;
-        store.name = "";
+        
+        /*store.name = "";
         store.address = "";
         store.phone = "";
         store.cnpj = "";
         store.workingHour = "";
         store.city = "";
-        store.state = "";
+        store.state = "";*/
 
         var connection = app.persistencia.ConnectionConfig();
         var storeDAO = new app.persistencia.StoreDAO(connection);
