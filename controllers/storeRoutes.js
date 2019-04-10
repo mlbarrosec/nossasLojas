@@ -3,9 +3,9 @@
 module.exports = function(app) {
     
     //use requisition of type get
-    app.get("/stores" , function(req,res){
+    /*app.get("/stores" , function(req,res){
         res.send('OK');
-    });
+    });*/
 
     //route for add data in db
     app.post("/stores/store",function(req,res){
@@ -36,7 +36,7 @@ module.exports = function(app) {
 
         storeDAO.save(store, function (erro, resultado){
             if(erro){
-                console.log("erro ao inserir no banco: " + erro);
+                console.log("Erro ao inserir no banco: " + erro);
                 res.status(500).send(erro);
             }else{
                 console.log('Loja Cadastrada');
@@ -69,7 +69,7 @@ module.exports = function(app) {
                 res.status(500).send(erro);
                 return;
             }else{
-                console.log('loja atualizada');
+                console.log('Loja atualizada');
                 //res.send(store);
                 res.status(201).json(store);
 
@@ -93,13 +93,41 @@ module.exports = function(app) {
                 res.status(500).send(erro);
                 return;
             }else{
-                console.log('loja deletada');
+                console.log('Loja deletada');
                 res.send(store)
                 res.status(204).json(store);
 
             }
         })
 
+    });
+
+    // Method to list store fou you ID
+
+    app.get("/stores/store/:id", function(req, res){
+        
+        var id = req.params.id;
+       
+
+        var connection = app.persistencia.ConnectionConfig();
+        var storeDAO = new app.persistencia.StoreDAO(connection);
+
+        storeDAO.searchForID(id, function(error,result){
+            if(error){
+                res.status(500).send(error);
+                return;
+            }else{
+                
+                if(result == ""){
+                    res.send("Loja não encontrada");
+                }else{
+                    console.log('Loja Encontada'+ JSON.stringify(result));
+                    res.send(result);
+                    return;
+                }
+            }
+        })
+    
     });
 
 }

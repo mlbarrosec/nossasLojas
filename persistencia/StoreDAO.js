@@ -17,8 +17,8 @@ StoreDAO.prototype.delete = function (store, callback){
     this._connection.query("DELETE FROM stores WHERE id = ?", store.id, callback);
 }
 
-StoreDAO.prototype.searchForID= function(id,callback){
-    this._connection.query("SELECT * FROM stores where id =?",[id],callback);
+StoreDAO.prototype.searchForID = function(id,callback){
+    this._connection.query("SELECT * FROM stores where id = ?",[id],callback);
 }
 
 module.exports = function(){
