@@ -1,4 +1,4 @@
-// this file define all routes in aplication
+//DEfinição de rotas
 
 module.exports = function(app) {
     
@@ -7,10 +7,10 @@ module.exports = function(app) {
         res.send('OK');
     });*/
 
-    //route for add data in db
+    //MEtodo POST para adiciona lojas no banco
     app.post("/stores/store",function(req,res){
 
-        //verify requisitions fields (validator-express)
+        //Verifica se os campos estão preenchidos (validator-express)
         req.assert("name", "O campo nome é obrigatório.").notEmpty();
         req.assert("address", "O campo endereço deve ser preenchido").notEmpty();
         req.assert("phone", "O campo telefone deve ser preenchido").notEmpty();
@@ -19,7 +19,7 @@ module.exports = function(app) {
         req.assert("city", "A campo cidade deve ser preenchido").notEmpty();
         req.assert("state", "O campo state tem que ser preenchido").notEmpty();
 
-        //verify if error where found
+        
         var errors = req.validationErrors();
         if(errors) {
             console.log("Erros de validação encontrados");
@@ -27,10 +27,11 @@ module.exports = function(app) {
             return;
         }
 
-        //requisition body-parser 
+        //store recebe o corpo json da requisição
+        //utiliza-se aqui a api body-parser
         var store = req.body;
        
-        //create connection whith db
+        //Cria a conexão com o banco de dados
         var connection = app.persistencia.ConnectionConfig();
         var storeDAO = new app.persistencia.StoreDAO(connection);
 
@@ -51,15 +52,9 @@ module.exports = function(app) {
 
     // Method  pu for update table stores
     app.put("/stores/store/:id", function(req,res){
-        var store = req.body;
-        //{};
-       
-        //get id in parameters of requisition
+        var store = req.body;       
         var id = req.params.id;
         store.id = id;
-
-        //values to update     
-        
 
         var connection = app.persistencia.ConnectionConfig();
         var storeDAO = new app.persistencia.StoreDAO(connection);
@@ -78,10 +73,11 @@ module.exports = function(app) {
 
     });
 
-    //Method for delete store in data base, per your id
+    //Metodo para deletar loja por ID
     app.delete("/stores/store/:id", function (req,res){
         var store = {}
 
+        //Pega o ID do parametro da requisição
         var id = req.params.id;
         store.id = id;
         
@@ -96,18 +92,15 @@ module.exports = function(app) {
                 console.log('Loja deletada');
                 res.send(store)
                 res.status(204).json(store);
-
             }
         })
 
     });
 
-    // Method to list store fou you ID
-
+    // Metodo GET para busca por ID
     app.get("/stores/store/:id", function(req, res){
         
-        var id = req.params.id;
-       
+        var id = req.params.id;       
 
         var connection = app.persistencia.ConnectionConfig();
         var storeDAO = new app.persistencia.StoreDAO(connection);
@@ -117,7 +110,7 @@ module.exports = function(app) {
                 res.status(500).send(error);
                 return;
             }else{
-                
+                //Caso naõ encontre retorna um erro ao usuário
                 if(result == ""){
                     res.send("Loja não encontrada");
                 }else{
@@ -128,6 +121,41 @@ module.exports = function(app) {
             }
         })
     
+    });
+
+
+    //Metodo GET para busca por estado e cidade
+    app.get("/stores/lista/", function(req, res){
+
+        //cria o array store e preenche os valores
+        //de cidade e estado de acordo com o que se quer buscar
+        var store = {}
+        store.city = "Cidade DEF";
+        store.state = "B";
+
+        var connection = app.persistencia.ConnectionConfig();
+        var storeDAO = new app.persistencia.StoreDAO(connection);
+
+        storeDAO.listStores(store,function(error,result){
+            if(error){
+                res.status(500).send(error);
+                return;
+            }else{
+                //Caso não encontre resultado na busca, retorna ao usuario 
+                //que não encontrou
+                if(result == ""){
+                    res.send("Loja não localizada");
+                    return;
+                }else{
+                    res.send(result);
+                    return;
+                }
+            }
+        })
+    
+
+
+
     });
 
 }

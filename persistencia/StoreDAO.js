@@ -21,6 +21,21 @@ StoreDAO.prototype.searchForID = function(id,callback){
     this._connection.query("SELECT * FROM stores where id = ?",[id],callback);
 }
 
+StoreDAO.prototype.listStores = function(store,callback){
+    
+    //Esse conjunto de if definem a query que deve ser feita de acordo 
+    //como que campos foram preenchidos na requisição.
+    if(store.city == "" && store.state == ""){
+        this._connection.query("SELECT * FROM stores", store, callback);
+    }else if (store.city == "" && store.state != ""){
+        this._connection.query("SELECT * FROM stores WHERE state = ? ", store.state, callback);
+    }else if (store.city != "" && store.state == ""){
+        this._connection.query("SELECT * FROM stores WHERE city = ? ", store.city , callback);
+    }else{
+        this._connection.query("SELECT * FROM stores WHERE state = ? AND city = ?",[store.state, store.city],callback);
+    }
+}
+
 module.exports = function(){
     return StoreDAO;
 }
