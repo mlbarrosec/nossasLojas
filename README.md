@@ -66,25 +66,25 @@ Endereço: http://localhost:3000/stores/lista/
 
 O tipo de pesquisa por padrão vem configurado para listar todas, você pode setar o tipo de pesquisa setando o campo city e o campo state do array store, da rota que busca.
 
->store.city = "";
-store.state = "";
+>store.city = ""; <br>
+store.state = "";<br>
 
-Exemplos:
->Busca lojas no estado A
-store.city = "";
-store.state = "A";
+Exemplos:<br>
+>Busca lojas no estado A<br>
+store.city = "";<br>
+store.state = "A";<br>
 
->Busca lojas na cidade XXXX
-store.city = "XXXX";
-store.state = "";
+>Busca lojas na cidade XXXX<br>
+store.city = "XXXX";<br>
+store.state = "";<br>
 
->Busca loja na cidade XXXX e no Estado A
-store.city = "XXXX";
-store.state = "A";
+>Busca loja na cidade XXXX e no Estado A<br>
+store.city = "XXXX";<br>
+store.state = "A";<br>
 
->Busca todas as Lojas
-store.city = "";
-store.state = "";
+>Busca todas as Lojas<br>
+store.city = "";<br>
+store.state = "";<br>
 
 ## Configuração do Banco de dados
 
