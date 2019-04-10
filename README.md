@@ -37,11 +37,11 @@ exemplo:
 tipo: PUT
 endereço: http://localhost:3000/stores/store/id (troque o id pelo id da linha a ser editada);
 Para atualizar um campo no banco de dados você deve passar no postman, o json com os campos que deseja editar
-Exemplo:
-{
-	"name":"Loja J",
-	"address":"Demon teste, 666"
-}
+Exemplo:<br>
+{<br>
+	"name":"Loja J",<br>
+	"address":"Demon teste, 666"<br>
+}<br>
 Esse comando editara o nome e endereço da loja de id 3 no banco.
 
 
