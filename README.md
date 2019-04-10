@@ -75,29 +75,16 @@ Ao executar a requisição do tipo GET pelo postman, você receberá os dados da
 
 #### -GET (Listar lojas por cidade, estado, cidade e estado e todas)
 Requisição tipo: GET
-Endereço: http://localhost:3000/stores/lista/
+Endereço: http://localhost:3000/stores/lista/state/city
 
-O tipo de pesquisa por padrão vem configurado para listar todas, você pode setar o tipo de pesquisa setando o campo city e o campo state do array store, da rota que busca.
-
->store.city = ""; <br>
-store.state = "";<br>
+Você pode fazer três tipos de consulta pelo endereço<br>
+-http://localhost:3000/stores/lista (Aqui irá listar todas as lojas)<br>
+-http://localhost:3000/stores/lista/state (Aqui irá listar todas as lojas de um determinado estado<br>
+-http://localhost:3000/stores/lista/state/city (Aqui irá listar todas as lojas de um estado e de uma cidade)<br>
 
 Exemplos:<br>
->Busca lojas no estado A<br>
-store.city = "";<br>
-store.state = "A";<br>
-
->Busca lojas na cidade XXXX<br>
-store.city = "XXXX";<br>
-store.state = "";<br>
-
->Busca loja na cidade XXXX e no Estado A<br>
-store.city = "XXXX";<br>
-store.state = "A";<br>
-
->Busca todas as Lojas<br>
-store.city = "";<br>
-store.state = "";<br>
+>http:<i></i>//localhost:3000/stores/lista/RS<br>
+http:<i></i>//localhost:3000/stores/lista/RS/Rio Grande<br>
 
 ## Configuração do Banco de dados
 
