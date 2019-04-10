@@ -16,7 +16,7 @@ seu servidor estará rodando caso apareça no console o aviso "servidor rodando 
 - Para testar as requisições é remondavel que use o puglin do postmam para o chrome
 o mesmo se encontra para download em: https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
 
-#### - POST (cadastra elemento loja no banco de dados)
+#### -POST (cadastra elemento loja no banco de dados)
 
 Para utilizar o metodo POST você deve executar a seguinte requisição no postman
 Requisição tipo: POST
@@ -35,7 +35,7 @@ E no corpo da requição o json com os dados da loja que deseja cadastrar no ban
 		"state":"A"<br>
 }<br>
 
-#### - PUT (Edita loja por ID)
+#### -PUT (Edita loja por ID)
 Requisição tipo: PUT
 Endereço: http://localhost:3000/stores/store/id (troque o id pelo id da linha a ser editada);
 
@@ -47,13 +47,13 @@ Exemplo:<br>
 }<br>
 Esse comando editara o nome e endereço da loja de id 3 no banco.
 
-### - DELETE (Deleta uma loja pelo seu ID)
+#### -DELETE (Deleta uma loja pelo seu ID)
 Requisição tipo: DELETE
 Ederereço: http://localhost:3000/stores/store/id (troque o id pelo id da linha a ser editada);
 
 Execute no postman a requisição do tipo DELETE com o endereço acima indicando o id da linha que deve ser deletada. 
 
-#### - GET (Listar loja por por ID)
+#### -GET (Listar loja por por ID)
 Reuisição tipo: GET
 Endereço: http://localhost:3000/stores/store/id (troque o id pelo id da linha a ser editada);
 
