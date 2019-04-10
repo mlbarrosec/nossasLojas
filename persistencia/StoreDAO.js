@@ -1,5 +1,4 @@
-//this function receive for parametrer an object 
-//of type conectionConfig
+//Definição da queryes
 
 function StoreDAO(connection) {
     this._connection = connection;
