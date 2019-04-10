@@ -6,6 +6,19 @@ Essa aplicação tem como objetivo principal implementar um API REST, utilizando
 informações de lojas físicas de um ecomerce.
 Essa API deve ser capaz de cadastrar, editarm deletar, recuperar, listar e filtrar as lojas cadastradas em um banco.
 
+## APIs Node Utilizadas
+Para desenvolvimento da aplicação foi utilizada as seguistes APIs.
+
+-Instalação das apis
+Pelo prompt do node, você deve estar localizado na pasta local da sua aplicação e executar os npm listados abaixo.
+
+-Body Parser 1.18.3 (npm install body-parse --save)<br>
+-Cosign 0.1.6 (npm install cosign --save)<br>
+-Express 4.16.4 (npm install express --save)<br>
+-Express-Validator 4.3.1 (npm install express-validator --save)<br>
+-Mysql 2.16.0 (npm install mysql --save)<br>
+-Nodemon 1.18.10 (npm install nodemon --save)<br>
+
 ## Funcionamento
 - Para execuar a aplicação é necessário ter o node instalado em seu computador.
 você pode obter ele no endereço: https://nodejs.org/en/
@@ -25,7 +38,7 @@ endereço: http://localhost:3000/stores/store/
 E no corpo da requição o json com os dados da loja que deseja cadastrar no banco de dados
 
 <b>exemplo:</b><br>
-{<br>
+>{<br>
 		"name":"Loja A",<br>
 		"address":"Rua Abc, 000",<br>
 		"phone":"(00) 0000-0000",<br>
@@ -41,10 +54,11 @@ Endereço: http://localhost:3000/stores/store/id (troque o id pelo id da linha a
 
 Para atualizar um campo no banco de dados você deve passar no postman, o json com os campos que deseja editar
 Exemplo:<br>
-{<br>
+>{<br>
 	"name":"Loja J",<br>
 	"address":"Demon teste, 666"<br>
 }<br>
+
 Esse comando editara o nome e endereço da loja de id 3 no banco.
 
 #### -DELETE (Deleta uma loja pelo seu ID)
@@ -54,17 +68,43 @@ Ederereço: http://localhost:3000/stores/store/id (troque o id pelo id da linha 
 Execute no postman a requisição do tipo DELETE com o endereço acima indicando o id da linha que deve ser deletada. 
 
 #### -GET (Listar loja por por ID)
-Reuisição tipo: GET
+Requisição tipo: GET
 Endereço: http://localhost:3000/stores/store/id (troque o id pelo id da linha a ser editada);
 
 Ao executar a requisição do tipo GET pelo postman, você receberá os dados da loja de mesmo id ou a informação de que a loja não foi encontrada.
+
+#### -GET (Listar lojas por cidade, estado, cidade e estado e todas)
+Requisição tipo: GET
+Endereço: http://localhost:3000/stores/lista/
+
+O tipo de pesquisa por padrão vem configurado para listar todas, você pode setar o tipo de pesquisa setando o campo city e o campo state do array store, da rota que busca.
+
+>store.city = ""; <br>
+store.state = "";<br>
+
+Exemplos:<br>
+>Busca lojas no estado A<br>
+store.city = "";<br>
+store.state = "A";<br>
+
+>Busca lojas na cidade XXXX<br>
+store.city = "XXXX";<br>
+store.state = "";<br>
+
+>Busca loja na cidade XXXX e no Estado A<br>
+store.city = "XXXX";<br>
+store.state = "A";<br>
+
+>Busca todas as Lojas<br>
+store.city = "";<br>
+store.state = "";<br>
 
 ## Configuração do Banco de dados
 
 Para este projeto fou utilizado um banco de dados MYSQL de nome "ourStores".
 Para armazenas as informações das lojas no banco de dados foi criada a tabela stores com a seguinte estrutura.
 
-id (INT)<br>
+>id (INT)<br>
 name (VARCHAR)<br>
 adress (VARCHAR)<br>
 phone (VARCHAR)<br>
@@ -75,7 +115,7 @@ state (VARCHAR)<br>
 
 ## Script para criação da tabela stores
 
-CREATE TABLE `stores`(  <br>
+>CREATE TABLE `stores`(  <br>
 `id` INT(11) NOT NULL AUTO_INCREMENT ,  <br>
 `name` VARCHAR(255) NOT NULL ,  <br>
 `adress` VARCHAR(255) NOT NULL ,  <br>
