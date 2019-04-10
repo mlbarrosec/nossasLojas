@@ -22,7 +22,7 @@ Para utilizar o metodo POST você deve executar a seguinte requisição no postm
 tipo: POST
 endereço: http://localhost:3000/stores/store/
 E no corpo da requição o json com os dados da loja que deseja cadastrar no banco de dados
-exemplo:
+exemplo:<br>
 {<br>
 		"name":"Loja A",<br>
 		"address":"Rua Abc, 000",<br>
