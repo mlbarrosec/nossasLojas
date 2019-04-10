@@ -50,7 +50,7 @@ module.exports = function(app) {
     });
 
 
-    // Method  pu for update table stores
+    // Metodo PUT para atualizar os dados pasando
     app.put("/stores/store/:id", function(req,res){
         var store = req.body;       
         var id = req.params.id;
@@ -130,8 +130,8 @@ module.exports = function(app) {
         //cria o array store e preenche os valores
         //de cidade e estado de acordo com o que se quer buscar
         var store = {}
-        store.city = "Cidade DEF";
-        store.state = "B";
+        store.city = "";
+        store.state = "";
 
         var connection = app.persistencia.ConnectionConfig();
         var storeDAO = new app.persistencia.StoreDAO(connection);
