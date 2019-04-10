@@ -22,7 +22,8 @@ Para utilizar o metodo POST você deve executar a seguinte requisição no postm
 tipo: POST
 endereço: http://localhost:3000/stores/store/
 E no corpo da requição o json com os dados da loja que deseja cadastrar no banco de dados
-exemplo:
+
+<b>exemplo:</b><br>
 {<br>
 		"name":"Loja A",<br>
 		"address":"Rua Abc, 000",<br>
@@ -36,17 +37,13 @@ exemplo:
 ### PUT Edita loja por ID
 tipo: PUT
 endereço: http://localhost:3000/stores/store/id (troque o id pelo id da linha a ser editada);
-No arquivo storeRoute.js o trecho a seguir define os dados que são atualizados
-
-//values to update<br>
-store.id = id;<br>
-store.name = "Loja A";<br>
-store.address = "Rua Nova, 1241";<br>
-store.phone = "(XX) XXXXX-XX";<br>
-store.cnpj = "00.000.000/0000-01";<br>
-store.workingHour = "Diariamente das 11hs às 23hs";<br>
-store.city = "Rio Grande";<br>
-store.state = "RS";<br>
+Para atualizar um campo no banco de dados você deve passar no postman, o json com os campos que deseja editar
+Exemplo:<br>
+{<br>
+	"name":"Loja J",<br>
+	"address":"Demon teste, 666"<br>
+}<br>
+Esse comando editara o nome e endereço da loja de id 3 no banco.
 
 
 ## Configuração do Banco de dados
