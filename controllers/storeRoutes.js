@@ -78,4 +78,28 @@ module.exports = function(app) {
 
     });
 
+    //Method for delete store in data base, per your id
+    app.delete("/stores/store/:id", function (req,res){
+        var store = {}
+
+        var id = req.params.id;
+        store.id = id;
+        
+        var connection = app.persistencia.ConnectionConfig();
+        var storeDAO = new app.persistencia.StoreDAO(connection);
+
+        storeDAO.delete(store, function(erro){
+            if(erro){
+                res.status(500).send(erro);
+                return;
+            }else{
+                console.log('loja deletada');
+                res.send(store)
+                res.status(204).json(store);
+
+            }
+        })
+
+    });
+
 }
