@@ -41,10 +41,11 @@ Endereço: http://localhost:3000/stores/store/id (troque o id pelo id da linha a
 
 Para atualizar um campo no banco de dados você deve passar no postman, o json com os campos que deseja editar
 Exemplo:<br>
-{<br>
+>{<br>
 	"name":"Loja J",<br>
 	"address":"Demon teste, 666"<br>
 }<br>
+
 Esse comando editara o nome e endereço da loja de id 3 no banco.
 
 #### -DELETE (Deleta uma loja pelo seu ID)
@@ -54,17 +55,43 @@ Ederereço: http://localhost:3000/stores/store/id (troque o id pelo id da linha 
 Execute no postman a requisição do tipo DELETE com o endereço acima indicando o id da linha que deve ser deletada. 
 
 #### -GET (Listar loja por por ID)
-Reuisição tipo: GET
+Requisição tipo: GET
 Endereço: http://localhost:3000/stores/store/id (troque o id pelo id da linha a ser editada);
 
 Ao executar a requisição do tipo GET pelo postman, você receberá os dados da loja de mesmo id ou a informação de que a loja não foi encontrada.
+
+#### -GET (Listar lojas por cidade, estado, cidade e estado e todas)
+Requisição tipo: GET
+Endereço: http://localhost:3000/stores/lista/
+
+O tipo de pesquisa por padrão vem configurado para listar todas, você pode setar o tipo de pesquisa setando o campo city e o campo state do array store, da rota que busca.
+
+>store.city = "";
+store.state = "";
+
+Exemplos:
+>Busca lojas no estado A
+store.city = "";
+store.state = "A";
+
+>Busca lojas na cidade XXXX
+store.city = "XXXX";
+store.state = "";
+
+>Busca loja na cidade XXXX e no Estado A
+store.city = "XXXX";
+store.state = "A";
+
+>Busca todas as Lojas
+store.city = "";
+store.state = "";
 
 ## Configuração do Banco de dados
 
 Para este projeto fou utilizado um banco de dados MYSQL de nome "ourStores".
 Para armazenas as informações das lojas no banco de dados foi criada a tabela stores com a seguinte estrutura.
 
-id (INT)<br>
+>id (INT)<br>
 name (VARCHAR)<br>
 adress (VARCHAR)<br>
 phone (VARCHAR)<br>
@@ -75,7 +102,7 @@ state (VARCHAR)<br>
 
 ## Script para criação da tabela stores
 
-CREATE TABLE `stores`(  <br>
+>CREATE TABLE `stores`(  <br>
 `id` INT(11) NOT NULL AUTO_INCREMENT ,  <br>
 `name` VARCHAR(255) NOT NULL ,  <br>
 `adress` VARCHAR(255) NOT NULL ,  <br>
