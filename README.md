@@ -16,11 +16,12 @@ seu servidor estará rodando caso apareça no console o aviso "servidor rodando 
 - Para testar as requisições é remondavel que use o puglin do postmam para o chrome
 o mesmo se encontra para download em: https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
 
-### POST Cadastra elemento loja no banco de dados
+### - POST (cadastra elemento loja no banco de dados)
 
 Para utilizar o metodo POST você deve executar a seguinte requisição no postman
-tipo: POST
+Requisição tipo: POST
 endereço: http://localhost:3000/stores/store/
+
 E no corpo da requição o json com os dados da loja que deseja cadastrar no banco de dados
 
 <b>exemplo:</b><br>
@@ -34,9 +35,10 @@ E no corpo da requição o json com os dados da loja que deseja cadastrar no ban
 		"state":"A"<br>
 }<br>
 
-### PUT Edita loja por ID
-tipo: PUT
-endereço: http://localhost:3000/stores/store/id (troque o id pelo id da linha a ser editada);
+### - PUT (Edita loja por ID)
+Requisição tipo: PUT
+Endereço: http://localhost:3000/stores/store/id (troque o id pelo id da linha a ser editada);
+
 Para atualizar um campo no banco de dados você deve passar no postman, o json com os campos que deseja editar
 Exemplo:<br>
 {<br>
@@ -45,6 +47,17 @@ Exemplo:<br>
 }<br>
 Esse comando editara o nome e endereço da loja de id 3 no banco.
 
+### - DELETE (Deleta uma loja pelo seu ID)
+Requisição tipo: DELETE
+Ederereço: http://localhost:3000/stores/store/id (troque o id pelo id da linha a ser editada);
+
+Execute no postman a requisição do tipo DELETE com o endereço acima indicando o id da linha que deve ser deletada. 
+
+### - GET (Listar loja por por ID)
+Reuisição tipo: GET
+Endereço: http://localhost:3000/stores/store/id (troque o id pelo id da linha a ser editada);
+
+Ao executar a requisição do tipo GET pelo postman, você receberá os dados da loja de mesmo id ou a informação de que a loja não foi encontrada.
 
 ## Configuração do Banco de dados
 
