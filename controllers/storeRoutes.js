@@ -54,18 +54,12 @@ module.exports = function(app) {
         var store = req.body;
         //{};
        
+        //get id in parameters of requisition
         var id = req.params.id;
         store.id = id;
 
-        //values to update
+        //values to update     
         
-        /*store.name = "";
-        store.address = "";
-        store.phone = "";
-        store.cnpj = "";
-        store.workingHour = "";
-        store.city = "";
-        store.state = "";*/
 
         var connection = app.persistencia.ConnectionConfig();
         var storeDAO = new app.persistencia.StoreDAO(connection);
@@ -74,9 +68,12 @@ module.exports = function(app) {
             if(erro){
                 res.status(500).send(erro);
                 return;
+            }else{
+                console.log('loja atualizada');
+                //res.send(store);
+                res.status(201).json(store);
+
             }
-            console.log('loja atualizada');
-            res.send(store);
         });
 
     });
