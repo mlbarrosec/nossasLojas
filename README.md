@@ -6,6 +6,19 @@ Essa aplicação tem como objetivo principal implementar um API REST, utilizando
 informações de lojas físicas de um ecomerce.
 Essa API deve ser capaz de cadastrar, editarm deletar, recuperar, listar e filtrar as lojas cadastradas em um banco.
 
+## APIs Node Utilizadas
+Para desenvolvimento da aplicação foi utilizada as seguistes APIs.
+
+-Instalação das apis
+Pelo prompt do node, você deve estar localizado na pasta local da sua aplicação e executar os npm listados abaixo.
+
+-Body Parser 1.18.3 (npm install body-parse --save)<br>
+-Cosign 0.1.6 (npm install cosign --save)<br>
+-Express 4.16.4 (npm install express --save)<br>
+-Express-Validator 4.3.1 (npm install express-validator --save)<br>
+-Mysql 2.16.0 (npm install mysql --save)<br>
+-Nodemon 1.18.10 (npm install nodemon --save)<br>
+
 ## Funcionamento
 - Para execuar a aplicação é necessário ter o node instalado em seu computador.
 você pode obter ele no endereço: https://nodejs.org/en/
