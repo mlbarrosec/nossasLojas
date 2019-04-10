@@ -25,7 +25,7 @@ endereço: http://localhost:3000/stores/store/
 E no corpo da requição o json com os dados da loja que deseja cadastrar no banco de dados
 
 <b>exemplo:</b><br>
-{<br>
+>{<br>
 		"name":"Loja A",<br>
 		"address":"Rua Abc, 000",<br>
 		"phone":"(00) 0000-0000",<br>
