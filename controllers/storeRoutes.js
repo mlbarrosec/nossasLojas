@@ -125,18 +125,23 @@ module.exports = function(app) {
 
 
     //Metodo GET para busca por estado e cidade
-    app.get("/stores/lista/", function(req, res){
+    app.get("/stores/lista/:state?/:city?", function(req, res){
 
         //cria o array store e preenche os valores
         //de cidade e estado de acordo com o que se quer buscar
-        var store = {}
+        /*var store = {}
         store.city = "";
-        store.state = "";
+        store.state = "";*/        
+        var city = req.params.city;
+        var state = req.params.state;
+
+        console.log(city);
+        console.log(state);
 
         var connection = app.persistencia.ConnectionConfig();
         var storeDAO = new app.persistencia.StoreDAO(connection);
 
-        storeDAO.listStores(store,function(error,result){
+        storeDAO.listStores(state, city, function(error,result){
             if(error){
                 res.status(500).send(error);
                 return;
