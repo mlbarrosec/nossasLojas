@@ -113,7 +113,7 @@ workingHour (VARCHAR)<br>
 city (VARCHAR)<br>
 state (VARCHAR)<br>
 
-## Script para criação da tabela stores
+### Script para criação da tabela stores
 
 >CREATE TABLE `stores`(  <br>
 `id` INT(11) NOT NULL AUTO_INCREMENT ,  <br>
@@ -128,3 +128,7 @@ PRIMARY KEY (`id`))  <br>
 ENGINE = InnoDB; <br>
 
 -Atenção: Você pode utilizar o arquivo ourstore.sql, que se encontra na raiz da aplicação, para criar a tabela.
+
+## Documentação Swagger da Aplicação
+A documentação Swagger da Aplicação está no arquivo <b>"NossasLojas.yaml"</b>
+Você pode utilizar o site http://editor.swagger.io/ para importar e visualizar a documentação
